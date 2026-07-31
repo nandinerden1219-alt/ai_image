@@ -15,7 +15,7 @@ import ChatSection from "@/components/ChatSection";
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen flex flex-col  bg-no-repeat bg-center bg-cover font-sans dark:bg-black">
+    <div className="relative min-h-screen flex flex-col  bg-[#f9fafb] bg-no-repeat bg-center bg-cover font-sans dark:bg-black">
       <main className="font-bold text-lg p-5 border border-b-black">
         Ai tools
       </main>

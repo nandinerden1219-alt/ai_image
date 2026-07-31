@@ -6,7 +6,16 @@ import { GoogleGenAI } from "@google/genai";
 import { ImageAnalysis } from "@/components/ImageAnalysis";
 import { Ingredients } from "@/components/Ingredients";
 import { ImageCreator } from "@/components/ImageCreator";
-
+import { Button } from "@/components/ui/button";
+import {
+  Popover,
+  PopoverContent,
+  PopoverDescription,
+  PopoverHeader,
+  PopoverTitle,
+  PopoverTrigger,
+} from "@/components/ui/popover";
+import ChatSection from "@/components/ChatSection";
 const client = new GoogleGenAI({
   apiKey: process.env.NEXT_PUBLIC_API_KEY,
 });
@@ -52,8 +61,15 @@ export default function Home() {
           </TabsContent>
         </Tabs>
       </div>
-      <div className="flex justify-end items-end ">
-        <MessageCircle className="text-white bg-black w-fit h-fit p-5 border rounded-[50%]" />
+      <div className="w-full h-full flex items-end justify-end">
+        <Popover>
+          <PopoverTrigger render={<Button variant="outline" />}>
+            <MessageCircle className="w-50 h-50" />
+          </PopoverTrigger>
+          <PopoverContent>
+            <ChatSection />
+          </PopoverContent>
+        </Popover>
       </div>
     </div>
   );

@@ -56,7 +56,7 @@ const ChatSection = () => {
       console.error("Error", error);
       setMessages((prev) => [
         ...prev,
-        { role: "AI", message: "Something went wrong. Please try again." },
+        { role: "AI", message: "Something went wrong" },
       ]);
     } finally {
       setIsLoading(false);
